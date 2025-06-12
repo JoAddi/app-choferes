@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes Choferes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <div id="app">
+        <!-- Pantalla de inicio -->
+        <div id="home" class="screen active">
+            <div class="container">
+                <h1>Sistema de Reportes</h1>
+                <p>Selecciona el tipo de reporte</p>
+                
+                <div class="buttons">
+                    <button onclick="showScreen('fuel')" class="btn btn-green">
+                        ⛽ Reporte de Combustible
+                    </button>
+                    <button onclick="showScreen('dayend')" class="btn btn-blue">
+                        🕐 Reporte Final del Día
+                    </button>
+                    <button onclick="showScreen('incident')" class="btn btn-red">
+                        ⚠️ Reporte de Incidente
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de combustible -->
+        <div id="fuel" class="screen">
+            <div class="container">
+                <div class="header">
+                    <button onclick="showScreen('home')" class="btn-back">← Volver</button>
+                    <h2>⛽ Carga de Combustible</h2>
+                </div>
+                
+                <form id="fuelForm" class="form">
+                    <div class="input-group">
+                        <label>Nombre del Chofer</label>
+                        <input type="text" id="fuelDriver" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Placa del Vehículo</label>
+                        <input type="text" id="fuelPlate" required style="text-transform: uppercase;">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Kilometraje Actual</label>
+                        <input type="number" id="fuelMileage" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Litros Recargados</label>
+                        <input type="number" step="0.01" id="fuelLiters" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Monto Pagado</label>
+                        <input type="number" step="0.01" id="fuelAmount" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-green">💾 Registrar Carga</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pantalla final del día -->
+        <div id="dayend" class="screen">
+            <div class="container">
+                <div class="header">
+                    <button onclick="showScreen('home')" class="btn-back">← Volver</button>
+                    <h2>🕐 Final del Día</h2>
+                </div>
+                
+                <form id="dayendForm" class="form">
+                    <div class="input-group">
+                        <label>Nombre del Chofer</label>
+                        <input type="text" id="dayendDriver" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Placa del Vehículo</label>
+                        <input type="text" id="dayendPlate" required style="text-transform: uppercase;">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Kilometraje Final</label>
+                        <input type="number" id="dayendMileage" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Observaciones</label>
+                        <textarea id="dayendObservations" rows="4" placeholder="Incidencias o detalles de cuidado..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-blue">💾 Registrar Final del Día</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pantalla de incidente -->
+        <div id="incident" class="screen">
+            <div class="container">
+                <div class="header">
+                    <button onclick="showScreen('home')" class="btn-back">← Volver</button>
+                    <h2>⚠️ Reporte de Incidente</h2>
+                </div>
+                
+                <form id="incidentForm" class="form">
+                    <div class="input-group">
+                        <label>Nombre del Chofer</label>
+                        <input type="text" id="incidentDriver" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Placa del Vehículo</label>
+                        <input type="text" id="incidentPlate" required style="text-transform: uppercase;">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Descripción del Incidente</label>
+                        <textarea id="incidentDescription" rows="5" placeholder="Describe el incidente en detalle..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-red">💾 Registrar Incidente</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pantalla de éxito -->
+        <div id="success" class="screen">
+            <div class="container text-center">
+                <div class="success-icon">✅</div>
+                <h2>¡Registro Exitoso!</h2>
+                <p>El reporte ha sido guardado correctamente en Google Sheets</p>
+                <button onclick="showScreen('home')" class="btn btn-green">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Enviando reporte...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
