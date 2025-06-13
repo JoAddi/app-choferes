@@ -1,4 +1,4 @@
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzegkRdxjFCQ27Qvuf9U1tf-1W__x3a4LIlkdSsvD9AVYf-yzWW81sP7_YrcbGHtltD/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxvmMq8a_cX4QEyn8Tn16Wkh9RyIDZymJsFYjiVh_eoaHvEs9GmDtzkfsVRDs5xUzUf/exec';
 
 // Funciones de navegación
 function showScreen(screenId) {
