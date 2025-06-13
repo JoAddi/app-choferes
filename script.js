@@ -1,4 +1,5 @@
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxvmMq8a_cX4QEyn8Tn16Wkh9RyIDZymJsFYjiVh_eoaHvEs9GmDtzkfsVRDs5xUzUf/exec';
+// Reemplaza esta URL con la URL de tu Google Apps Script
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKtpR9PVcUZ33Hodi8iszdttng5q_iPvaegLIiXQeKKPZxTHHneOvKeFdBg4jDmfV3/exec';
 
 // Funciones de navegación
 function showScreen(screenId) {
